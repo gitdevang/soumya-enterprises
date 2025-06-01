@@ -58,9 +58,8 @@ return (
         </h1>
         <div className="hidden md:flex flex-wrap gap-x-10 justify-center items-center ">
           {numbers.map((item, index) => (
-            <div className="flex flex-col justify-center items-center text-center">
+            <div key={index} className="flex flex-col justify-center items-center text-center">
               <div
-                key={index}
                 className={`w-20 aspect-square rounded-full flex justify-center items-center ${item.color} relative top-10 shadow-xl shadow-[#3B3B3B25]`}
               >
                 <Image width={80} height={80} src={item.imageSrc} className="h-[60%]" alt="" />
