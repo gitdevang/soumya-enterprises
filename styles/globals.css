@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+    --font-p_lt: "var(--font-poppins)", "sans-serif";
+    --font-p_reg: "var(--font-poppins)", "sans-serif";
+    --font-p_md: "var(--font-poppins)", "sans-serif";
+    --font-p_sb: "var(--font-poppins)", "sans-serif";
+    --font-p_bd: "var(--font-poppins)", "sans-serif";
+    --font-p_eb: "var(--font-poppins)", "sans-serif";
+    --font-p_bl: "var(--font-poppins)", "sans-serif";
+    --font-mont: "var(--font-montserrat)", "sans-serif";
+    --font-archivo: "var(--font-archivo)", "sans-serif";
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.font-p_lt {
+    font-family: var(--font-poppins);
+    font-weight: 300;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.font-p_reg {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+}
+
+.font-p_md {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+}
+
+.font-p_sb {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+}
+
+.font-p_bd {
+    font-family: var(--font-poppins);
+    font-weight: 700;
+}
+
+.font-p_eb {
+    font-family: var(--font-poppins);
+    font-weight: 800;
+}
+
+.font-p_bl {
+    font-family: var(--font-poppins);
+    font-weight: 900;
+}
+
+.font-mont {
+    font-family: var(--font-montserrat);
+    font-weight: 400;
+}
+
+.font-mont_md {
+    font-family: var(--font-montserrat);
+    font-weight: 500;
+}
+
+.font-mont_sb {
+    font-family: var(--font-montserrat);
+    font-weight: 600;
+}
+.font-mont_bd {
+    font-family: var(--font-montserrat);
+    font-weight: 800;
+}
+
+.font-archivo {
+    font-family: var(--font-archivo);
+    font-weight: 400;
+}
+
+/* Animation 1 */
+@keyframes card1-entry {
+  from {
+    transform: rotate(-15deg) scale(0.8) skewX(10deg);
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) scale(1);
+    top: 0px;
+    opacity: 1;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes card1-exit {
+  from {
+    transform: rotate(0deg) scale(1);
+    top: 0px;
+    opacity: 1;
+  }
+  to {
+    transform: rotate(-15deg) scale(0.8) skewX(10deg);
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/* Animation 2 */
+@keyframes card2-entry {
+  from {
+    transform: scale(0.8);
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes card2-exit {
+  from {
+    transform: scale(1);
+    top: 0px;
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/* Animation 3 */
+@keyframes card3-entry {
+  from {
+    transform: rotate(15deg) scale(0.8) skewX(-10deg);
+    top: 50px;
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) scale(1) skewX(0deg);
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes card3-exit {
+  from {
+    transform: rotate(0deg) scale(1) skewX(0deg);
+    top: 0px;
+    opacity: 1;
+  }
+  to {
+    transform: rotate(15deg) scale(0.8) skewX(-10deg);
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/* Classes for Animations-entry */
+.card1-entry {
+  animation: card1-entry 0.3s forwards 0.3s;
+}
+
+.card2-entry {
+  animation: card2-entry 0.3s forwards 0.3s;
+}
+
+.card3-entry {
+  animation: card3-entry 0.3s forwards 0.3s;
+}
+
+/* Classes for Animations-exit */
+.card1-exit {
+  animation: card1-exit 0.3s forwards;
+}
+
+.card2-exit {
+  animation: card2-exit 0.3s forwards;
+}
+
+.card3-exit {
+  animation: card3-exit 0.3s forwards;
 }
