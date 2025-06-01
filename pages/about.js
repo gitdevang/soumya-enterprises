@@ -478,7 +478,7 @@ const TestimonialCard = ({ quote, name, title, number }) => (
       ))}
       </div>
       <p className="leading-relaxed text-lg font-mont mb-6">
-        "{quote}"
+        {quote}&quot;
       </p>
       <a className="inline-flex items-center">
         <span className="flex-grow flex flex-col">
